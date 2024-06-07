@@ -11,11 +11,11 @@ jobs:
     - name: Mirror the Github repos to Gitee.
       uses: Yikun/hub-mirror-action@master
       with:
-        src: github/Josh-Jun
-        dst: gitee/shijun_z
+        src: 'github/${{ github.repository_owner }}'
+        dst: 'gitee/${{ secrets.GITEE_USER }}'
         dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
         dst_token: ${{ secrets.GITEE_TOKEN }}
         account_type: user
         force_update: true
         clone_style: ssh
-        static_list: "sync2gitee"
+        static_list: ${{ github.event.repository.name }}
