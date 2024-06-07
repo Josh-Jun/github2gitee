@@ -17,3 +17,5 @@ jobs:
         dst_token: ${{ secrets.GITEE_TOKEN }}
         account_type: user
         force_update: true
+        clone_style: ssh
+        static_list: "sync2gitee"
